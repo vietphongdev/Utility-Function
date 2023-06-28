@@ -32,6 +32,8 @@ axiosClient.interceptors.request.use(
   }
 );
 
+const refreshTokens= [];
+
 axiosClient.interceptors.response.use(
   (res) => {
     return res;
@@ -43,14 +45,24 @@ axiosClient.interceptors.response.use(
       // Access Token was expired
       if (err.response.status === 401 && !originalConfig._retry) {
         originalConfig._retry = true;
-
+        const controller = new AbortController();
         try {
-          const rs = await axios.post("https://api.example.org/user/refresh", {
+          const rs = await axios.post("https://api.example.org/user/refresh", null, {
             headers: {
               Authorization: localStorage.getItem("refresh-token")!,
             },
+            signal: controller.signal
           });
-
+          
+          if (refreshTokens.length > 0) {
+            for (const controller of refreshTokens) {
+              controller.abort();
+            }
+            refreshTokens.length = 0;
+          } else{
+            return;
+          }
+            
           const access = rs.data.data["X-Auth-Token"];
           const refresh = rs.data.data["X-Refresh-Token"];
 
