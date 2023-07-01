@@ -68,11 +68,23 @@ const upload = multer({
 //   }
 // });
 
-app.post("/upload", upload.array("file"), async (req, res) => {
+app.post("/upload", upload.array("file"), (req, res) => {
   try {
-    const results = await s3Uploadv3(req.files);
-    console.log(results);
-    return res.json({ status: "success" });
+    s3Uploadv3(req.files).then(() => {
+      // Xóa tệp khỏi bộ nhớ đệm
+      fs.unlink(filePath, (err) => {
+        if (err) {
+          // Xử lý lỗi nếu có
+          console.error('Failed to delete file from cache:', err);
+        } else {
+          console.log('File deleted from cache');
+        }
+      });
+      return res.json({ status: "success" });
+    })
+    .catch((error) => {
+      console.error('Failed to send file:', error);
+    });
   } catch (err) {
     console.log(err);
   }
