@@ -84,6 +84,6 @@ console.log("Total pairs:", countPairsWithDifference(arr, a));
 </p>
 
 * Độ phức tạp
-- Duyệt mảng một lần (O(n)) → Vì mỗi số chỉ xét đúng một lần.
-- Kiểm tra và thêm vào Set (O(1)) → Vì Set hỗ trợ tra cứu nhanh.
-- Tổng độ phức tạp: O(n) (tốt hơn nhiều so với O(n²) nếu dùng vòng lặp lồng nhau).
+  + Duyệt mảng một lần (O(n)) → Vì mỗi số chỉ xét đúng một lần.
+  + Kiểm tra và thêm vào Set (O(1)) → Vì Set hỗ trợ tra cứu nhanh.
+  + Tổng độ phức tạp: O(n) (tốt hơn nhiều so với O(n²) nếu dùng vòng lặp lồng nhau).
