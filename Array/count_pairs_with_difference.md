@@ -72,5 +72,5 @@ console.log("Total pairs:", countPairsWithDifference(arr, a));
  */
 
  <p align="center">
-  <a href="#" target="blank"><img src="./count_pairs_with_difference.jpg" width="200" alt="demo" /></a>
+  <a href="#" target="blank"><img src="./count_pairs_with_difference.jpg" width="500" alt="demo" /></a>
 </p>
