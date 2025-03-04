@@ -18,7 +18,7 @@ const arr = [3, 8, 14, 0, 5, 2, 6, 11];
 const a = 3;
 
 /** Cách đơn giản nhất */
-
+```
 function countPairsWithDifference(arr, a) {
     let output = [];
     for(i = 0; i < arr.length - 1; i++){
@@ -31,6 +31,7 @@ function countPairsWithDifference(arr, a) {
     }
     console.log(output)
 }
+```
 
 /*
 Độ phức tạp
@@ -50,7 +51,7 @@ Tổng thể, thuật toán có độ phức tạp O(n²) (không tối ưu cho 
  * Thêm số num vào Set để sử dụng cho lần lặp sau.
  */
 
-
+```
 function countPairsWithDifference(arr, a) {
     let seen = new Set();  // Set để lưu các số đã duyệt
     let count = 0;  // Biến đếm số cặp thỏa mãn
@@ -70,7 +71,10 @@ function countPairsWithDifference(arr, a) {
     return count;
 }
 
+
 console.log("Total pairs:", countPairsWithDifference(arr, a));
+
+```
 
 /**
  * Giải thích
