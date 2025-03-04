@@ -1,16 +1,17 @@
-/**
+
  * Input:
- * Cho một array chứa các số nguyên riêng biệt và một số nguyên a xác định
- * 
+ Cho một array chứa các số nguyên riêng biệt và một số nguyên a xác định
+ 
  * Output:
- * Tìm ra các cặp số trong mảng có hiệu đúng bằng a
- * 
+  Tìm ra các cặp số trong mảng có hiệu đúng bằng a
+  
  * Exam:
- * arr = [3, 8, 14, 0, 5, 2, 6, 11]
- * a = 3
- * => Output: 6
- * (3, 0), (3,6), (8,5), (8,11), (14, 11), (5, 2)
- */
+ arr = [3, 8, 14, 0, 5, 2, 6, 11]
+ a = 3
+
+ * Result: 6
+  (3, 0), (3,6), (8,5), (8,11), (14, 11), (5, 2)
+ 
 
 
 const arr = [3, 8, 14, 0, 5, 2, 6, 11];
@@ -18,7 +19,7 @@ const a = 3;
 
 /** Cách đơn giản nhất */
 
-const countPairsWithDifference1 = (arr, a) => {
+function countPairsWithDifference(arr, a) {
     let output = [];
     for(i = 0; i < arr.length - 1; i++){
         for(j = i + 1; j < arr.length; j++){
@@ -31,7 +32,12 @@ const countPairsWithDifference1 = (arr, a) => {
     console.log(output)
 }
 
-
+/*
+Độ phức tạp
+Bạn duyệt toàn bộ mảng arr bằng vòng lặp i (O(n))
+Với mỗi phần tử i, bạn duyệt tiếp các phần tử j phía sau (O(n))
+Tổng thể, thuật toán có độ phức tạp O(n²) (không tối ưu cho mảng lớn).
+**/
 
 /** Cách tối ưu hơn */
 /**
