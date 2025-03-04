@@ -13,7 +13,7 @@ const newArr = shuffle(myArr, 4);
 
 
 /** Cách - 2 */
-const shuffle = (arr, times) => {
+const shuffle2 = (arr, times) => {
   if(!arr.length || arr.length === 1) return arr
   if(times > 0){
     arr = arr.sort(() => Math.random() - 0.5);
@@ -25,7 +25,7 @@ const shuffle = (arr, times) => {
 
 
 /** Cách - 3  */
-const shuffle = (arr) => {
+const shuffle3 = (arr) => {
   arr = arr.slice();
   for(let i = 0; i < arr.length; i++){
     const randomIndex = randomInt(i, arr.length -1);

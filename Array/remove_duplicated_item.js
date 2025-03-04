@@ -16,7 +16,7 @@ const removeDuplicatedItem = (input) => {
 };
 
 /** Dùng Reduce */
-const removeDuplicatedItem = (arr) => {
+const removeDuplicatedItem2 = (arr) => {
   const frequenceObj = arr.reduce((acc, item) => {
     if(acc.hasOwnProperty(item)){
       const {[item]: val, ...restAcc} = acc;
