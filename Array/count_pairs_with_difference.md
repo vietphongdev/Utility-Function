@@ -34,19 +34,19 @@ function countPairsWithDifference(arr, a) {
 ```
 
 * Độ phức tạp
-- Bạn duyệt toàn bộ mảng arr bằng vòng lặp i (O(n))
-- Với mỗi phần tử i, bạn duyệt tiếp các phần tử j phía sau (O(n))
-- Tổng thể, thuật toán có độ phức tạp O(n²) (không tối ưu cho mảng lớn).
+    + Bạn duyệt toàn bộ mảng arr bằng vòng lặp i (O(n))
+    + Với mỗi phần tử i, bạn duyệt tiếp các phần tử j phía sau (O(n))
+    + Tổng thể, thuật toán có độ phức tạp O(n²) (không tối ưu cho mảng lớn).
 
 * Cách tối ưu hơn
 
- * Bước thực hiện
- * Tạo một Set để lưu các số đã duyệt trước đó.
- * Mục đích: Kiểm tra nhanh xem liệu có số nào đã xuất hiện trước mà tạo thành hiệu đúng bằng a. 
- * Duyệt từng phần tử trong mảng. Với mỗi số num đang xét, ta kiểm tra xem:
- * Số num - a có tồn tại trong Set không? → Nếu có, thì cặp (num - a, num) có hiệu đúng bằng a, in ra và tăng biến đếm.
- * Số num + a có tồn tại trong Set không? → Nếu có, thì cặp (num, num + a) có hiệu đúng bằng a, in ra và tăng biến đếm.
- * Thêm số num vào Set để sử dụng cho lần lặp sau.
+ +  Bước thực hiện
+ + Tạo một Set để lưu các số đã duyệt trước đó.
+ + Mục đích: Kiểm tra nhanh xem liệu có số nào đã xuất hiện trước mà tạo thành hiệu đúng bằng a. 
+ + Duyệt từng phần tử trong mảng. Với mỗi số num đang xét, ta kiểm tra xem:
+ + Số num - a có tồn tại trong Set không? → Nếu có, thì cặp (num - a, num) có hiệu đúng bằng a, in ra và tăng biến đếm.
+ + Số num + a có tồn tại trong Set không? → Nếu có, thì cặp (num, num + a) có hiệu đúng bằng a, in ra và tăng biến đếm.
+ + Thêm số num vào Set để sử dụng cho lần lặp sau.
  
 
 ```
@@ -76,7 +76,7 @@ console.log("Total pairs:", countPairsWithDifference(arr, a));
 
 * Giải thích
 
-- Mảng này có 8 phần tử. Chúng ta sẽ duyệt từng số và dùng Set để kiểm tra hiệu
+    + Mảng này có 8 phần tử. Chúng ta sẽ duyệt từng số và dùng Set để kiểm tra hiệu
 
 
  <p align="center">
