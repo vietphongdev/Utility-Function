@@ -24,8 +24,8 @@ function countPairsWithDifference(arr, a) {
     for(i = 0; i < arr.length - 1; i++){
         for(j = i + 1; j < arr.length; j++){
           const diff = arr[j] - arr[i];
-          if(Math.abs(diff) === Math.abs(del)){
-            output = [...output, [arr[i], arr[j]]]
+          if(Math.abs(diff) === Math.abs(a)){
+            output.push([arr[i], arr[j])
           }
         }
     }
