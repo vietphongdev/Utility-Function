@@ -1,4 +1,4 @@
-Cho 2 mảng đã được sort sẵn theo thứ tự tăng dần
+/* Cho 2 mảng đã được sort sẵn theo thứ tự tăng dần
 A = [1, 5, 7, 10, 15, 25]
 B = [1, 2, 3, 8, 28]
 
@@ -8,6 +8,7 @@ Hãy tạo ra mảng C gồm:
 + sắp xếp theo thứ tự tăng dần.
 
 Output: [1, 2, 3, 5, 7, 8, 10, 15, 25, 28]
+*/
 
 const A = [2, 7, 10, 15, 25];
 const B = [2, 6, 28, 30, 44];
